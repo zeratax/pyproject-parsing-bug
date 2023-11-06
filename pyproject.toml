@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "test-scripts-parsing"
+version = "0.1.0"
+description = "Test of the pyproject.toml parsing"
+authors = ["Your Name <you@example.com>"]
+packages = [
+  { include = "mypackage" },
+]
+
+[tool.poetry.scripts]
+test-alt-script = { callable = "test_alt_script:foo", extras=["all"] }
+test-script = "test_script:foo"
+test-package-script = "mypackage.test_script:foo"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
